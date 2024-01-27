@@ -14,7 +14,7 @@ from io import BytesIO
 
 def get_qrcode(input_data, logo):
   qr = qrcode.QRCode(
-        version=7,
+        version=3,
         box_size=6,
         border=3
   )
