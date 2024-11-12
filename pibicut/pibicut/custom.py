@@ -28,7 +28,7 @@ def get_qrcode(input_data, logo):
   
   if logo:
     embedded = os.path.join(path, "sites", site_name, 'public', logo[1:])
-    img = qr.make_image(image_factory=StyledPilImage, color_mask=RadialGradiantColorMask(back_color = (255,255,255), center_color = (70,130,180), edge_color = (0,0,0)), module_drawer=GappedSquareModuleDrawer(), eye_drawer=SquareModuleDrawer(), embeded_image_path=embedded)
+    img = qr.make_image(image_factory=StyledPilImage, color_mask=RadialGradiantColorMask(back_color = (255,255,255), center_color = (70,130,180), edge_color = (0,0,0)), module_drawer=GappedSquareModuleDrawer(), eye_drawer=SquareModuleDrawer(), embeded_image_path=embedded, error_correction=qrcode.constants.ERROR_CORRECT_H)
   else:
     img = qr.make_image(image_factory=StyledPilImage, color_mask=RadialGradiantColorMask(back_color = (255,255,255), center_color = (70,130,180), edge_color = (0, 0, 0)), module_drawer=GappedSquareModuleDrawer(), eye_drawer=SquareModuleDrawer())
   #qr = qrcode.make(input_str)
